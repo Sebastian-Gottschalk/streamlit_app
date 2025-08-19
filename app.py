@@ -13,8 +13,6 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-st.write(st.session_state)
-
 if "tab1" not in st.session_state:
     st.session_state.tab1 = False
 
@@ -109,5 +107,6 @@ if st.session_state.tab2:
 
     ds_geo["lat"] = ds_geo["centroid_lat"]
     ds_geo["lon"] = ds_geo["centroid_lon"]
+
 
     st.map(ds_geo)
